@@ -81,13 +81,20 @@ export default function App() {
             {!isSignUp && (
               <div className="text-right -mt-2">
                 <button
-                type="button"
-                className="link-text inline-block text-[#A0A0A0] text-[13px] hover:text-[#FFFFFF]"
+                  type="button"
+                  className="link-text inline-block text-[#A0A0A0] text-[13px] hover:text-[#FFFFFF]"
                 >
                   Forgot password?
                 </button>
               </div>
             )}
+
+            <button
+              className="primary-button text-[#0A0A0A] bg-[#FFFFFF] w-full py-3 font-semibold cursor-pointer"
+              style={{ fontWeight: 600, borderRadius: "8px" }}
+            >
+              {isSignUp ? "Create Account" : "Log In"}
+            </button>
           </div>
         </form>
       </div>
