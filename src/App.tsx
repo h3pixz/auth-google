@@ -77,6 +77,17 @@ export default function App() {
                 </div>
               </div>
             </div>
+
+            {!isSignUp && (
+              <div className="text-right -mt-2">
+                <button
+                type="button"
+                className="link-text inline-block text-[#A0A0A0] text-[13px] hover:text-[#FFFFFF]"
+                >
+                  Forgot password?
+                </button>
+              </div>
+            )}
           </div>
         </form>
       </div>
