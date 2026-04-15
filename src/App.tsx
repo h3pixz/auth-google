@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 
 export default function App() {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -6,8 +7,24 @@ export default function App() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const userData = {
+      email: email,
+      password: password,
+    };
+
+    try {
+      const response = await axios.post("", userData);
+
+      if(response.status === 200) {
+        console.log("Данные успешно отправлены!");
+      }
+    } 
+    catch (error) {
+      console.log("Ошибка: ", error);
+    }
   };
 
   return (
