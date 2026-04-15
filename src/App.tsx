@@ -6,9 +6,11 @@ export default function App() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
 
     const userData = {
       email: email,
@@ -23,6 +25,8 @@ export default function App() {
       }
     } catch (error) {
       console.log("Ошибка: ", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -185,10 +189,11 @@ export default function App() {
           )}
 
           <button
+            disabled={isLoading}
             className="primary-button text-[#0A0A0A] bg-[#FFFFFF] w-full py-3 font-semibold cursor-pointer"
             style={{ fontWeight: 600, borderRadius: "8px" }}
           >
-            {isSignUp ? "Create Account" : "Log In"}
+            {isLoading ? 'Sending...' : (isSignUp ? "Create Account" : "Log In")}
           </button>
 
           <div className="text-center pt-2">
