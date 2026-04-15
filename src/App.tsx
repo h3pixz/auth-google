@@ -18,11 +18,10 @@ export default function App() {
     try {
       const response = await axios.post("", userData);
 
-      if(response.status === 200) {
+      if (response.status === 200) {
         console.log("Данные успешно отправлены!");
       }
-    } 
-    catch (error) {
+    } catch (error) {
       console.log("Ошибка: ", error);
     }
   };
@@ -163,6 +162,7 @@ export default function App() {
                   required
                 />
                 <button
+                  type="button"
                   className="password-toggle absolute right-4 top-1/2 -translate-y-1/2 text-[#A0A0A0] text-[12px]"
                   onClick={() => setShowPassword(!showPassword)}
                   style={{ fontWeight: 500 }}
