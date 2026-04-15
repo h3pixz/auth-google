@@ -3,6 +3,8 @@ import { useState } from "react";
 export default function App() {
   const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   return (
     <div className="size-full flex items-center justify-center bg-[#0A0A0A]">
@@ -35,7 +37,7 @@ export default function App() {
                 id="email"
                 type="email"
                 value={email}
-                className="bg-[#1A1A1A] border border-[rgba(255,255,255,0.15)] px-4 py-3 outline-none w-full text-[#FFFFFF] "
+                className="bg-[#1A1A1A] border border-[rgba(255,255,255,0.15)] px-4 py-3 outline-none w-full text-[#FFFFFF]"
                 placeholder="you@example.com"
                 style={{
                   borderRadius: "8px",
@@ -43,6 +45,37 @@ export default function App() {
                 }}
                 required
               ></input>
+
+              <div>
+                <label
+                  htmlFor="password"
+                  className="text-[#E0E0E0] text-[13px] mb-2"
+                  style={{ fontWeight: 600 }}
+                >
+                  Password
+                </label>
+                <div className="relative">
+                  <input
+                    id="password"
+                    type={showPassword ? "text" : "password"}
+                    value={password}
+                    className="bg-[#1A1A1A] border border-[rgba(255,255,255,0.15)] px-4 py-3 outline-none w-full text-[#FFFFFF] pr-12"
+                    placeholder="••••••••"
+                    style={{
+                      borderRadius: "8px",
+                      borderWidth: "1px",
+                    }}
+                    required
+                  />
+                  <button
+                    className="password-toggle absolute right-4 top-1/2 -translate-y-1/2 text-[#A0A0A0] text-[12px]"
+                    onClick={() => setShowPassword(!password)}
+                    style={{ fontWeight: 500 }}
+                  >
+                    {showPassword ? "Hide" : "Show"}
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </form>
