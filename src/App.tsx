@@ -109,6 +109,7 @@ export default function App() {
                 id="email"
                 type="email"
                 value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="input-field bg-[#1A1A1A] border border-[rgba(255,255,255,0.15)] px-4 py-3 outline-none w-full text-[#FFFFFF]"
                 placeholder="you@example.com"
                 style={{
@@ -131,6 +132,7 @@ export default function App() {
                   id="password"
                   type={showPassword ? "text" : "password"}
                   value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   className="input-field bg-[#1A1A1A] border border-[rgba(255,255,255,0.15)] px-4 py-3 outline-none w-full text-[#FFFFFF] pr-12"
                   placeholder="••••••••"
                   style={{
