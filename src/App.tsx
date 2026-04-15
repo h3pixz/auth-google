@@ -6,6 +6,10 @@ export default function App() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-[#0A0A0A]">
       <style>
@@ -81,7 +85,7 @@ export default function App() {
       </style>
 
       <div className="fade-in w-full max-w-[360px] px-6">
-        <form className="space-y-6">
+        <form className="space-y-6" onSubmit={handleSubmit}>
           <div className="text-center mb-10">
             <h1
               className="text-[26px] font-semibold tracking-tight mb-2 text-[#FFFFFF]"
