@@ -45,56 +45,68 @@ export default function App() {
                 }}
                 required
               ></input>
-
-              <div>
-                <label
-                  htmlFor="password"
-                  className="text-[#E0E0E0] text-[13px] mb-2"
-                  style={{ fontWeight: 600 }}
-                >
-                  Password
-                </label>
-                <div className="relative">
-                  <input
-                    id="password"
-                    type={showPassword ? "text" : "password"}
-                    value={password}
-                    className="bg-[#1A1A1A] border border-[rgba(255,255,255,0.15)] px-4 py-3 outline-none w-full text-[#FFFFFF] pr-12"
-                    placeholder="••••••••"
-                    style={{
-                      borderRadius: "8px",
-                      borderWidth: "1px",
-                    }}
-                    required
-                  />
-                  <button
-                    className="password-toggle absolute right-4 top-1/2 -translate-y-1/2 text-[#A0A0A0] text-[12px]"
-                    onClick={() => setShowPassword(!password)}
-                    style={{ fontWeight: 500 }}
-                  >
-                    {showPassword ? "Hide" : "Show"}
-                  </button>
-                </div>
-              </div>
             </div>
-
-            {!isSignUp && (
-              <div className="text-right -mt-2">
+            <div>
+              <label
+                htmlFor="password"
+                className="text-[#E0E0E0] text-[13px] mb-2"
+                style={{ fontWeight: 600 }}
+              >
+                Password
+              </label>
+              <div className="relative">
+                <input
+                  id="password"
+                  type={showPassword ? "text" : "password"}
+                  value={password}
+                  className="bg-[#1A1A1A] border border-[rgba(255,255,255,0.15)] px-4 py-3 outline-none w-full text-[#FFFFFF] pr-12"
+                  placeholder="••••••••"
+                  style={{
+                    borderRadius: "8px",
+                    borderWidth: "1px",
+                  }}
+                  required
+                />
                 <button
-                  type="button"
-                  className="link-text inline-block text-[#A0A0A0] text-[13px] hover:text-[#FFFFFF]"
+                  className="password-toggle absolute right-4 top-1/2 -translate-y-1/2 text-[#A0A0A0] text-[12px]"
+                  onClick={() => setShowPassword(!password)}
+                  style={{ fontWeight: 500 }}
                 >
-                  Forgot password?
+                  {showPassword ? "Hide" : "Show"}
                 </button>
               </div>
-            )}
+            </div>
+          </div>
 
-            <button
-              className="primary-button text-[#0A0A0A] bg-[#FFFFFF] w-full py-3 font-semibold cursor-pointer"
-              style={{ fontWeight: 600, borderRadius: "8px" }}
-            >
-              {isSignUp ? "Create Account" : "Log In"}
-            </button>
+          {!isSignUp && (
+            <div className="text-right -mt-2">
+              <button
+                type="button"
+                className="link-text inline-block text-[#A0A0A0] text-[13px] hover:text-[#FFFFFF]"
+              >
+                Forgot password?
+              </button>
+            </div>
+          )}
+
+          <button
+            className="primary-button text-[#0A0A0A] bg-[#FFFFFF] w-full py-3 font-semibold cursor-pointer"
+            style={{ fontWeight: 600, borderRadius: "8px" }}
+          >
+            {isSignUp ? "Create Account" : "Log In"}
+          </button>
+
+          <div className="text-center pt-2">
+            <p className="text-[#A0A0A0] text-[14px]">
+              {isSignUp ? "Already have an account?" : "Dont have an account?"}{" "}
+              <button
+                className="link-text text-[#FFFFFF] inline-block"
+                style={{ fontWeight: 500 }}
+                onClick={() => setIsSignUp(!isSignUp)}
+              >
+                {isSignUp ? "Log In" : "Create account"}
+              </button>
+            </p>
           </div>
         </form>
       </div>
