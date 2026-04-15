@@ -8,6 +8,78 @@ export default function App() {
 
   return (
     <div className="size-full flex items-center justify-center bg-[#0A0A0A]">
+      <style>
+        {`@keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(8px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .fade-in {
+          animation: fadeIn 0.6s ease-out;
+        }
+
+        .input-field {
+          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .input-field:focus {
+          border-color: #FFFFFF;
+          box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+        }
+
+        .input-field:hover:not(:focus) {
+          border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .primary-button {
+          transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .primary-button:hover {
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+        }
+
+        .primary-button:active {
+          transform: translateY(0);
+          box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+        }
+
+        .link-text {
+          transition: color 0.15s ease;
+          position: relative;
+        }
+
+        .link-text::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 1px;
+          bottom: -2px;
+          left: 0;
+          background-color: #FFFFFF;
+          transition: width 0.2s ease;
+        }
+
+        .link-text:hover::after {
+          width: 100%;
+        }
+
+        .password-toggle {
+          transition: opacity 0.15s ease;
+        }
+
+        .password-toggle:hover {
+          opacity: 0.6;
+        }`}
+      </style>
+      
       <div className="fade-in w-full  max-w-[360px] px-6">
         <form className="space-y-6">
           <div className="text-center mb-10">
