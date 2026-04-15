@@ -79,7 +79,7 @@ export default function App() {
           opacity: 0.6;
         }`}
       </style>
-      
+
       <div className="fade-in w-full  max-w-[360px] px-6">
         <form className="space-y-6">
           <div className="text-center mb-10">
@@ -181,6 +181,12 @@ export default function App() {
             </p>
           </div>
         </form>
+
+        <div className="text-center mt-12">
+          <p className="text-[#666] text-[12px]">
+            By continuing, you agree to our Terms of Service and Privacy Policy
+          </p>
+        </div>
       </div>
     </div>
   );
