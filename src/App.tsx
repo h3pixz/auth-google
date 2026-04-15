@@ -7,7 +7,7 @@ export default function App() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="size-full flex items-center justify-center bg-[#0A0A0A]">
+    <div className="min-h-screen w-full flex items-center justify-center bg-[#0A0A0A]">
       <style>
         {`@keyframes fadeIn {
           from {
@@ -80,7 +80,7 @@ export default function App() {
         }`}
       </style>
 
-      <div className="fade-in w-full  max-w-[360px] px-6">
+      <div className="fade-in w-full max-w-[360px] px-6">
         <form className="space-y-6">
           <div className="text-center mb-10">
             <h1
@@ -100,7 +100,7 @@ export default function App() {
             <div>
               <label
                 htmlFor="email"
-                className="text-[#E0E0E0] text-[13px] mb-2"
+                className="block text-[#E0E0E0] text-[13px] mb-2"
                 style={{ fontWeight: 600 }}
               >
                 Email address
@@ -109,7 +109,7 @@ export default function App() {
                 id="email"
                 type="email"
                 value={email}
-                className="bg-[#1A1A1A] border border-[rgba(255,255,255,0.15)] px-4 py-3 outline-none w-full text-[#FFFFFF]"
+                className="input-field bg-[#1A1A1A] border border-[rgba(255,255,255,0.15)] px-4 py-3 outline-none w-full text-[#FFFFFF]"
                 placeholder="you@example.com"
                 style={{
                   borderRadius: "8px",
@@ -121,7 +121,7 @@ export default function App() {
             <div>
               <label
                 htmlFor="password"
-                className="text-[#E0E0E0] text-[13px] mb-2"
+                className="block text-[#E0E0E0] text-[13px] mb-2"
                 style={{ fontWeight: 600 }}
               >
                 Password
@@ -131,7 +131,7 @@ export default function App() {
                   id="password"
                   type={showPassword ? "text" : "password"}
                   value={password}
-                  className="bg-[#1A1A1A] border border-[rgba(255,255,255,0.15)] px-4 py-3 outline-none w-full text-[#FFFFFF] pr-12"
+                  className="input-field bg-[#1A1A1A] border border-[rgba(255,255,255,0.15)] px-4 py-3 outline-none w-full text-[#FFFFFF] pr-12"
                   placeholder="••••••••"
                   style={{
                     borderRadius: "8px",
@@ -141,7 +141,7 @@ export default function App() {
                 />
                 <button
                   className="password-toggle absolute right-4 top-1/2 -translate-y-1/2 text-[#A0A0A0] text-[12px]"
-                  onClick={() => setShowPassword(!password)}
+                  onClick={() => setShowPassword(!showPassword)}
                   style={{ fontWeight: 500 }}
                 >
                   {showPassword ? "Hide" : "Show"}
