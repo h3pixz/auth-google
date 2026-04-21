@@ -12,13 +12,16 @@ export default function App() {
     e.preventDefault();
     setIsLoading(true);
 
-    const userData = {
-      email: email,
-      password: password,
-    };
+    const path = isSignUp ? "/register" : "/login";
+    const url = `http://localhost:/auth${path}`;
 
     try {
-      const response = await axios.post("", userData);
+      const response = await axios.post(url, null, {
+        params: {
+          login: email,
+          password: password,
+        }
+      });
 
       if (response.status === 200) {
         console.log("Данные успешно отправлены!");
